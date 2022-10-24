@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import EditorContainer from "./EditorContainer";
 import InputConsole from "./InputConsole";
 import Navbar from "./Navbar";
@@ -13,18 +13,6 @@ import { ModalContext } from "../../context/ModalContext";
 import Modal from "../../components/Modal";
 import { Buffer } from "buffer";
 import axios from "axios";
-
-const MainApp = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  height: calc(100vh - 4.5rem);
-`;
-
-const Consoles = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-`;
 
 const Playground = () => {
   const { folderId, playgroundId } = useParams();
@@ -159,7 +147,7 @@ const Playground = () => {
   };
 
   return (
-    <div>
+    <>
       <Navbar />
       <MainApp>
         <EditorContainer
@@ -182,8 +170,19 @@ const Playground = () => {
         </Consoles>
       </MainApp>
       {isOpen.value === true ? <Modal /> : <></>}
-    </div>
+    </>
   );
 };
-
 export default Playground;
+
+const MainApp = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: calc(100vh - 4.5rem);
+`;
+
+const Consoles = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+`;

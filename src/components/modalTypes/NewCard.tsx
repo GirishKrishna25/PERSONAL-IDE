@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { RiCloseFill } from "react-icons/ri";
 import { PlaygroundContext } from "../../context/PlaygroundContext";
-import { CloseButton, Header, Input, ModalProps } from "../Modal";
+import { CloseButton, Header, ModalProps } from "../Modal";
 import Select from "react-select";
 import styled from "styled-components";
 
@@ -82,10 +82,15 @@ const InputWithSelect = styled.div`
   }
 
   button {
+    grid-column-start: span 2;
     background: #241f21;
+    width: 15rem;
     height: 2rem;
+    align-items: center;
     color: white;
     padding: 0 2rem;
     border-radius: 5px;
+    margin: 0 auto;
+    margin-top: 1rem;
   }
 `;

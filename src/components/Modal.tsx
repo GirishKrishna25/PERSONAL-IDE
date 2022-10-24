@@ -18,6 +18,7 @@ export interface ModalProps {
   };
 }
 
+// this it to display 'modals' dynamically
 const Modal = () => {
   const ModalFeatures = useContext(ModalContext)!;
   const { closeModal } = ModalFeatures;
@@ -61,6 +62,11 @@ const Modal = () => {
 };
 export default Modal;
 
+// these are act as global syles for "modals".
+// therefore, we can take it from here.
+
+// ModalContainer contains ModalContent (this is the which we see on the screen
+// which is styled to display right at the screen)
 const ModalContainer = styled.div`
   background: rgba(0, 0, 0, 0.4);
   width: 100%;

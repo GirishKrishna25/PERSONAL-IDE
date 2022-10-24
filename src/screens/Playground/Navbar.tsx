@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
@@ -14,7 +13,7 @@ const Navbar = () => {
       >
         <Logo src="/logo.png" alt="" />
         <MainHeading>
-          <span>Code</span> Deck
+          <span>personal</span>IDE
         </MainHeading>
       </NavbarContent>
     </NavbarContainer>
@@ -31,12 +30,12 @@ const NavbarContainer = styled.div`
 `;
 
 const NavbarContent = styled.button`
+  border: 0;
+  outline: 0;
   display: flex;
   align-items: center;
   gap: 0.9rem;
   background: transparent;
-  border: 0;
-  outline: 0;
 `;
 
 const Logo = styled.img`

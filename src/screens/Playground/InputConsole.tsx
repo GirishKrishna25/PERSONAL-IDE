@@ -50,14 +50,14 @@ const Header = styled.div`
   font-weight: 700;
 
   button {
+    outline: 0;
+    border: 0;
     display: flex;
     align-items: center;
     gap: 0.4rem;
     font-size: 1rem;
     font-weight: 400;
     background: transparent;
-    outline: 0;
-    border: 0;
 
     svg {
       font-size: 1.5rem;
@@ -66,13 +66,12 @@ const Header = styled.div`
 `;
 
 const TextArea = styled.textarea`
-  flex-grow: 1;
-  resize: none;
   border: 0;
   outline: 0;
+  flex-grow: 1;
+  resize: none;
   font-size: 1.3rem;
   letter-spacing: 1px;
   line-height: 25px;
   padding: 1rem;
-  // padding-top: 0.5rem;
 `;

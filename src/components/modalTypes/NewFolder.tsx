@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { RiCloseFill } from "react-icons/ri";
 import { PlaygroundContext } from "../../context/PlaygroundContext";
 import { CloseButton, Header, Input, ModalProps } from "../Modal";

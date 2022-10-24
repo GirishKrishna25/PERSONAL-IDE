@@ -105,7 +105,7 @@ const EditorContainer: React.FC<EditorContainerProps> = ({
 
   return (
     <StyledEditorContainer>
-      {/* Upper Toolbar Begins */}
+      {/* upper tool bar */}
       <UpperToolbar>
         <Title>
           <h3>{title}</h3>
@@ -146,24 +146,24 @@ const EditorContainer: React.FC<EditorContainerProps> = ({
           />
         </SelectBars>
       </UpperToolbar>
-      {/* Upper Toolbar Ends */}
 
-      {/* Code Editor Begins */}
+      {/* code editor */}
       <CodeEditor
         currentLanguage={selectedLanguage.value}
         currentTheme={selectedTheme.value}
         currentCode={currentCode}
         setCurrentCode={setCurrentCode}
       />
-      {/* Code Editor Ends */}
 
-      {/* Lower Toolbar Begins */}
+      {/* lower toolbar */}
       <LowerToolbar>
         <ButtonGroup>
+          {/* full screen button */}
           <button>
             <BiFullscreen />
             Full Screen
           </button>
+          {/* import code button */}
           <label>
             <input
               type="file"
@@ -175,6 +175,7 @@ const EditorContainer: React.FC<EditorContainerProps> = ({
             />
             <BiImport /> Import Code
           </label>
+          {/* export code button */}
           <button>
             <BiExport />
             Export Code
@@ -281,10 +282,12 @@ const SelectBars = styled.div`
   align-items: center;
   gap: 1rem;
 
+  // for language-selection
   & > div:nth-of-type(1) {
     width: 10rem;
   }
 
+  // for theme-selection
   & > div:nth-of-type(2) {
     width: 11rem;
   }

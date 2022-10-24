@@ -17,14 +17,6 @@ import { indentUnit } from "@codemirror/language";
 import { EditorState } from "@codemirror/state";
 import styled from "styled-components";
 
-const CodeEditorContainer = styled.div`
-  height: calc(100vh - 12.5rem);
-
-  & > div {
-    height: 100%;
-  }
-`;
-
 interface CodeEditorProps {
   currentLanguage: string;
   currentTheme: string;
@@ -107,5 +99,12 @@ const CodeEditor: React.FC<CodeEditorProps> = ({
     </CodeEditorContainer>
   );
 };
-
 export default CodeEditor;
+
+const CodeEditorContainer = styled.div`
+  height: calc(100vh - 12.5rem);
+
+  & > div {
+    height: 100%;
+  }
+`;
