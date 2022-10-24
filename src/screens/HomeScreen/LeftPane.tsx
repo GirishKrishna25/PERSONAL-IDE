@@ -33,11 +33,13 @@ const LeftPane = () => {
 };
 export default LeftPane;
 
+// when we add elements into the right-pane scroll-bar comes into play
+// and it effects the left-pane too.
+// we don't want to have a scroll-bar to our left-pane
+// so we use this.
 const StyledLeftPane = styled.div`
   background: #221f20;
   width: 40%;
-  top: 0;
-  left: 0;
   height: 100vh;
 
   display: flex;
@@ -45,6 +47,8 @@ const StyledLeftPane = styled.div`
   justify-content: center;
 
   position: fixed;
+  top: 0;
+  left: 0;
 `;
 
 const ContentContainer = styled.div`
@@ -75,15 +79,18 @@ const SubHeading = styled.h2`
   font-weight: 400;
 `;
 
+// if we use 'button' element instead of 'anchor' element we can't apply flexbox.
 const AddNewButton = styled.a`
+  text-decoration: none;
   padding: 0.25rem 1rem;
-  border-radius: 2rem;
-  background: white;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  background: white;
+  border-radius: 2rem;
   cursor: pointer;
-  text-decoration: none;
 
   span {
     font-weight: 700;

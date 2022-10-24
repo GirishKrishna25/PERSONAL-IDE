@@ -39,7 +39,17 @@ const RightPane = () => {
           <span>+</span> New Folder
         </AddButton>
       </Header>
+      {/* 
+       
+      "Folder"  - "Header"  - "Heading"
+                              "Icons & Button" - "Delete-icon", "Edit-icon", "add-button"
+                  "CardContainer" - "Playground", "Playground"...
+      
+      "Playground"  - "small-logo", 
+                      "CardContent" - "heading", "language" 
+                      "Icons" - "edit-icon", "delete-icon"
 
+      */}
       {Object.entries(Folders).map(
         ([folderId, folder]: [folderId: string, folder: any]) => (
           <Folder>
@@ -49,7 +59,6 @@ const RightPane = () => {
                 <Icons>
                   <IoTrashOutline
                     onClick={() => {
-                      // DELETE FOLDER
                       deleteFolder(folderId);
                     }}
                   />
@@ -104,7 +113,6 @@ const RightPane = () => {
                     >
                       <IoTrashOutline
                         onClick={() => {
-                          // DELETE CARD
                           deleteCard(folderId, cardId);
                         }}
                       />
@@ -133,23 +141,18 @@ const RightPane = () => {
 };
 export default RightPane;
 
-interface HeaderProps {
-  readonly variant: string;
-}
-
-interface HeadingProps {
-  readonly size: string;
-}
-
 const StyledRightPane = styled.div`
+  width: 60%;
   padding: 2rem;
   background: #fafafa;
   position: absolute;
   right: 0;
   top: 0;
-  width: 60%;
 `;
 
+interface HeaderProps {
+  readonly variant: string;
+}
 const Header = styled.div<HeaderProps>`
   display: flex;
   align-items: center;
@@ -158,9 +161,10 @@ const Header = styled.div<HeaderProps>`
   margin-bottom: ${(props) =>
     props.variant === "main" ? "2.75rem" : "1.4rem"};
 
+  // we used this 'pseudo-class' to add the horizontal line after the header.
   &::after {
-    position: absolute;
     content: "";
+    position: absolute;
     bottom: -1.25rem;
     width: 100%;
     height: 2px;
@@ -169,6 +173,9 @@ const Header = styled.div<HeaderProps>`
   }
 `;
 
+interface HeadingProps {
+  readonly size: string;
+}
 const Heading = styled.h3<HeadingProps>`
   font-weight: 400;
   font-size: ${(props) => (props.size === "large" ? "1.8rem" : "1.5rem")};
@@ -179,14 +186,13 @@ const Heading = styled.h3<HeadingProps>`
 `;
 
 const AddButton = styled.button`
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  background: transparent;
   outline: 0;
   border: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
   font-size: 1.1rem;
-  cursor: pointer;
 
   span {
     font-size: 1.75rem;
@@ -212,15 +218,15 @@ const CardContainer = styled.div`
 `;
 
 const PlaygroundCard = styled.div`
+  padding: 0.6rem;
   display: flex;
   align-items: center;
-  padding: 0.6rem;
   gap: 1rem;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.08s ease;
 
+  transition: all 0.08s ease;
   &:hover {
     opacity: 0.75;
   }
@@ -243,7 +249,7 @@ const CardContent = styled.div`
 const Icons = styled.div`
   display: flex;
   gap: 0.5rem;
-  font-size: 1.25rem;
+  font-size: 1.25rem; // icon-size
   padding-right: 1rem;
 `;
 
