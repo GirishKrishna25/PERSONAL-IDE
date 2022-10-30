@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ModalContext } from "../../context/ModalContext";
 
 const LeftPane = () => {
+  // to create a contextApi we use 'creatContext' and to use what we created we use "useContext"
   const { openModal } = useContext(ModalContext)!;
 
   return (

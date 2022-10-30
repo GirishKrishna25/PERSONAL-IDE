@@ -19,7 +19,8 @@ export interface ModalProps {
 // this it to display 'modals' dynamically
 const Modal = () => {
   const ModalFeatures = useContext(ModalContext)!;
-  const { closeModal } = ModalFeatures;
+  // ignoring openModal here
+  const closeModal = ModalFeatures.closeModal;
   const isOpen = ModalFeatures.isOpen;
 
   // types
