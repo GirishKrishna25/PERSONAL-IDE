@@ -4,25 +4,33 @@ import { v4 as uuid } from "uuid";
 interface PlaygroundContextType {
   folders: any;
   setFolders: any;
+
   createNewFolder: (folderTitle: string) => void;
+
   createNewPlayground: (
     folderId: string,
     cardTitle: string,
     cardLanguage: string
   ) => void;
+
   createNewFolderAndPlayground: (
     folderTitle: string,
     cardTitle: string,
     cardLanguage: string
   ) => void;
+
   editCardTitle: (
     folderId: string,
     cardId: string,
     newCardTitle: string
   ) => void;
+
   editFolderTitle: (folderId: string, newFolderTitle: string) => void;
+
   deleteCard: (folderId: string, cardId: string) => void;
+
   deleteFolder: (folderId: string) => void;
+
   savePlayground: (
     folderId: string,
     cardId: string,
@@ -81,9 +89,11 @@ export const languageMap: {
 
 const initialItems = {
   [uuid()]: {
+    // folder id
     title: "Folder Title 1",
     items: {
       [uuid()]: {
+        // playground id
         title: "Stack Implementation",
         language: "c++",
         code: languageMap["c++"].defaultCode,

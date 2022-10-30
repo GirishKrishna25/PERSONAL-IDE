@@ -1,11 +1,11 @@
 import { createContext, useState } from "react";
 
 interface PopupFields {
-  value: boolean; // if popup open or not
-  type: string; // which type of popup is it
+  value: boolean;
+  type: string;
   identifer: {
-    folderId: string; // the folder which is selected
-    cardId: string; // the card which is selected
+    folderId: string;
+    cardId: string;
   };
 }
 

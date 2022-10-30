@@ -1,8 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
-// import { RiCloseFill } from "react-icons/ri";
 import { ModalContext } from "../context/ModalContext";
-// import { PlaygroundContext } from "../context/PlaygroundContext";
 import EditCardTitle from "./modalTypes/EditCardTitle";
 import EditFolderTitle from "./modalTypes/EditFolderTitle";
 import NewCard from "./modalTypes/NewCard";
